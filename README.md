@@ -247,3 +247,46 @@ always serves the bundle's own `evaluation.json`.
 - **Single-process demo**: the in-memory rate limiter and SQLite suit one server. Production would use PostgreSQL,
   a shared rate limiter, real authentication for analysts, and a real SMS/email provider.
 - **Trusted patterns** are coarse (merchant category × domestic/international × device type).
+---
+
+## Future Vision: Fraud Risk as a Service
+
+### From a Standalone Demo to an Integrable Security Service
+
+EASATA is designed to explore how explainable transaction-risk detection can become a reusable service for developers, fintech applications, e-commerce platforms, and digital payment providers.
+
+The long-term vision is to evolve EASATA into a **Fraud Risk as a Service (FRaaS)** platform, allowing third-party applications to submit transaction details through secure APIs and receive risk assessments, explainable signals, and recommended actions.
+
+### Proposed Integration Model
+
+A third-party application could integrate with EASATA through the following workflow:
+
+1. **Transaction submission:** The application sends transaction information to an authenticated EASATA API.
+2. **Risk assessment:** The service evaluates the transaction using its risk-scoring models and supporting signals.
+3. **Explainable results:** The API returns a risk assessment with understandable reasons and relevant risk indicators.
+4. **Decision support:** The integrating application uses the result to support its own verification, review, or transaction-handling workflow.
+5. **Monitoring and feedback:** Authorized operators review outcomes and use suitable feedback to evaluate and improve the detection system.
+
+### Potential Use Cases
+
+- **Fintech applications:** Add an additional transaction-risk assessment layer.
+- **E-commerce platforms:** Flag unusual purchase activity for review.
+- **Digital service providers:** Assess suspicious transaction patterns before proceeding with sensitive workflows.
+- **Developers and startups:** Integrate explainable risk analysis without building an entire detection pipeline from scratch.
+
+### Future Development Roadmap
+
+- **API-first architecture:** Define stable request and response contracts for third-party integrations.
+- **Authentication and access control:** Introduce secure client authentication, API key management, and usage controls.
+- **Scalable deployment:** Explore production-grade storage, distributed rate limiting, monitoring, and reliable service deployment.
+- **Integration tools:** Provide API documentation, example requests, a sandbox, and SDKs where useful.
+- **Evaluation and transparency:** Measure model performance, monitor drift, document limitations, and provide interpretable risk results.
+- **Privacy and security:** Minimize sensitive data collection, protect transaction information, and establish appropriate retention and access policies.
+
+### Current Status
+
+The current EASATA project is an educational demonstration built around synthetic transaction data and simulated outcomes. The third-party service model described above is a future direction, not a claim that a production-ready fraud detection service is already available.
+
+The goal is to explore how explainable risk assessment can become easier to integrate, evaluate, and operate responsibly across different applications.
+
+
